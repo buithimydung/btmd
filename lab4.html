@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lí sinh viên </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #f2f2f2;
+            padding: 0.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 1em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+        }
+
+        section {
+            padding: 1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Management</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#tab-requirement">Requirement</a></li>
+            <li><a href="#tab-design">Design</a></li>
+            <li><a href="#tab-implement">Implement</a></li>
+        </ul>
+    </nav>
+
+    <section id="tab-requirement">
+        <h2>Requirement</h2>
+        <p>
+            Yêu cầu: Chọn 1 đối tượng bất kỳ trong thế giới thực, ví dụ như lớp môn học, giảng viên,… Sau đó thiết kế chức năng Quản lý đối tượng đó trên html bao gồm các tính năng thêm, sửa, xóa, tìm kiếm cho đối tượng đó. Ví dụ, làm chức năng Quản lý Sinh viên, bao gôm tính năng thêm, sửa, xóa, tìm kiếm. Chú ý: Các thành viên trong lớp, trong nhóm không được chọn các đối tượng giống nhau. 
+        </p>
+        
+    </section>
+
+    <section id="tab-design">
+        <h2>Design</h2>
+        <p>Quản lí một số sinh viên </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Class</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>Student 1</td>
+                    <td>20</td>
+                    <td>Class A</td>
+                    <td>Math</td>
+                </tr>
+                <tr>
+                    <td>Student 2</td>
+                    <td>18</td>
+                    <td>Class B</td>
+                    <td>Math</td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </section>
+
+    <section id="tab-implement">
+        <h2>Implement</h2>
+        <script>
+            
+            const students = [
+                { name: "Student 1", age: 20, class: "Class A", course: "Math" },
+                // Add data for other students
+            ];
+
+            // Function to display students in the table
+            function displayStudents() {
+                const tableBody = document.querySelector("tbody");
+
+                // Clear existing rows
+                tableBody.innerHTML = "";
+
+                // Loop through students and append rows to the table
+                students.forEach(student => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${student.name}</td>
+                        <td>${student.age}</td>
+                        <td>${student.class}</td>
+                        <td>${student.course}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // Initial display
+            displayStudents();
+        </script>
+    </section>
+
+    
+</body>
+</html>
